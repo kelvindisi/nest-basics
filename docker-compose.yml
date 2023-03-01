@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DATABASE=nest
+    ports:
+      - '5433:5432'
+    networks:
+      - nest-network
+
+networks:
+  nest-network: {}
